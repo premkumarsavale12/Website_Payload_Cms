@@ -2,6 +2,12 @@ import { withPayload } from '@payloadcms/next/withPayload'
 
 import redirects from './redirects.js'
 
+console.log('--- VERCEL DEBUG ---')
+console.log('PAYLOAD_SECRET present:', !!process.env.PAYLOAD_SECRET)
+console.log('DATABASE_URI present:', !!process.env.DATABASE_URI)
+console.log('NODE_ENV:', process.env.NODE_ENV)
+console.log('--------------------')
+
 const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : undefined || process.env.__NEXT_PRIVATE_ORIGIN || 'http://localhost:3000'
