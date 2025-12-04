@@ -212,6 +212,8 @@ export interface Page {
     | Right
     | Logo
     | Down
+    | Partner
+    | Conten
   )[];
   meta?: {
     title?: string | null;
@@ -948,6 +950,40 @@ export interface Down {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partner".
+ */
+export interface Partner {
+  Heading: string;
+  logos?:
+    | {
+        media: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'partner';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten".
+ */
+export interface Conten {
+  cards?:
+    | {
+        title: string;
+        Paragraph: string;
+        authorName?: string | null;
+        logo?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'conten';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1260,6 +1296,8 @@ export interface PagesSelect<T extends boolean = true> {
         right?: T | RightSelect<T>;
         logo?: T | LogoSelect<T>;
         down?: T | DownSelect<T>;
+        partner?: T | PartnerSelect<T>;
+        conten?: T | ContenSelect<T>;
       };
   meta?:
     | T
@@ -1463,6 +1501,38 @@ export interface DownSelect<T extends boolean = true> {
     | {
         label?: T;
         url?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partner_select".
+ */
+export interface PartnerSelect<T extends boolean = true> {
+  Heading?: T;
+  logos?:
+    | T
+    | {
+        media?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten_select".
+ */
+export interface ContenSelect<T extends boolean = true> {
+  cards?:
+    | T
+    | {
+        title?: T;
+        Paragraph?: T;
+        authorName?: T;
+        logo?: T;
         id?: T;
       };
   id?: T;

@@ -13,6 +13,8 @@ import { Slider } from '@/blocks/Slider/Component'
 import { Right } from '@/blocks/Right/Component'
 import { Logo } from '@/blocks/Logo/Component'
  import { DownComponent}  from '@/blocks/Down/Component'
+  import { Partner } from '@/blocks/Partner/Component'
+  import { ConteComponent}  from '@/blocks/Conten/Component'
 
 
 const blockComponents = {
@@ -26,7 +28,9 @@ const blockComponents = {
   slider: Slider,
   right: Right,
   logo: Logo,
-   down:DownComponent
+   down:DownComponent,
+    partner :Partner ,
+   conten  :ConteComponent
 
 }
 

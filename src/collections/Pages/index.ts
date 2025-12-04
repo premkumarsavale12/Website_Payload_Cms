@@ -14,6 +14,7 @@ import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { Logo } from '../../blocks/Logo/config'
 import { Down }  from '../../blocks/Down/config'
+ import { Conten } from '../../blocks/Conten/config'
 
 
 import {
@@ -27,6 +28,7 @@ import { Simple } from '@/blocks/Simple/config'
 import { FAQ } from '@/blocks/FAQ/config'
 import { Slider } from '@/blocks/Slider/config'
 import { Right } from '@/blocks/Right/config'
+import { Partner } from '@/blocks/Partner/config'
 
 
 
@@ -81,7 +83,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Simple, FAQ, Slider, Right, Logo, Down],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Simple, FAQ, Slider, Right, Logo, Down, Partner, Conten],
               required: true,
               admin: {
                 initCollapsed: true,
